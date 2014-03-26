@@ -18,6 +18,10 @@
       'ticket.status.changed':              'renderText',
       'ticket.tags.changed':                'renderText',
       'ticket.collaborators.changed':       'renderText'
+      'ticket.ticket_field_112790.changed': 'renderText'
+      'ticket.ticket_field_113244.changed': 'renderText'
+      'ticket.ticket_field_113245.changed': 'renderText'
+      'ticket.ticket_field_113246.changed': 'renderText'
     },
 
     renderText: function() {
@@ -103,6 +107,14 @@
           return ticketTags.join(', ');
         case 'current_user.id':
           return this.currentUser().id();
+        case 'ticket.ticket_field_113246':
+          return this.ticket().ticket_field_113246();
+        case 'ticket.ticket_field_113244':
+          return this.ticket().ticket_field_113244();
+        case 'ticket.ticket_field_113245':
+          return this.ticket().ticket_field_113245();
+        case 'ticket.ticket_field_113246':
+          return this.ticket().ticket_field_113246();
         case 'current_user.name':
           return this.currentUser().name();
         case 'current_user.email':
