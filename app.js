@@ -17,10 +17,10 @@
       'ticket.priority.changed':            'renderText',
       'ticket.status.changed':              'renderText',
       'ticket.tags.changed':                'renderText',
-      'ticket.collaborators.changed':       'renderText'
-      'ticket.ticket_field_112790.changed': 'renderText'
-      'ticket.ticket_field_113244.changed': 'renderText'
-      'ticket.ticket_field_113245.changed': 'renderText'
+      'ticket.collaborators.changed':       'renderText',
+      'ticket.ticket_field_112790.changed': 'renderText',
+      'ticket.ticket_field_113244.changed': 'renderText',
+      'ticket.ticket_field_113245.changed': 'renderText',
       'ticket.ticket_field_113246.changed': 'renderText'
     },
 
