@@ -9,7 +9,7 @@
       'ticket.assignee.user.id.changed':    'renderText',
       'ticket.assignee.user.name.changed':  'renderText',
       'ticket.assignee.user.email.changed': 'renderText',
-//      'ticket.requester.id.changed':        'renderText',
+      'ticket.requester.id.changed':        'renderText',
       'ticket.requester.name.changed':      'renderText',
       'ticket.requester.email.changed':     'renderText',
       'ticket.type.changed':                'renderText',
