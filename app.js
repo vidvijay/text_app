@@ -18,10 +18,10 @@
       'ticket.status.changed':              'renderText',
       'ticket.tags.changed':                'renderText',
       'ticket.collaborators.changed':       'renderText',
-      'ticket.custom_field_112790.changed': 'renderText',
-      'ticket.custom_field_113244.changed': 'renderText',
-      'ticket.custom_field_113245.changed': 'renderText',
-      'ticket.custom_field_113246.changed': 'renderText'
+      'ticket.ticket_field_112790.changed': 'renderText',
+      'ticket.ticket_field_113244.changed': 'renderText',
+      'ticket.ticket_field_113245.changed': 'renderText',
+      'ticket.ticket_field_113246.changed': 'renderText'
     },
 
     renderText: function() {
@@ -75,53 +75,68 @@
     },
 
     matchPlaceholder: function(placeholderStripped) {
-
+	var returnvsl = "";
       switch(placeholderStripped) {
         case 'ticket.id':
-          return this.ticket().id();
+			return this.ticket().id();
         case 'ticket.subject':
-          return this.ticket().subject();
+			return this.ticket().subject();
         case 'ticket.status':
-          return this.ticket().status();
+			return this.ticket().status();
         case 'ticket.priority':
-          return this.ticket().priority();
+			return this.ticket().priority();
         case 'ticket.type':
-          return this.ticket().type();
+			return this.ticket().type();
         case 'ticket.requester.id':
-          return this.ticket().requester().id();
+			return this.ticket().requester().id();
         case 'ticket.requester.name':
-          return this.ticket().requester().name();
+			return this.ticket().requester().name();
         case 'ticket.requester.email':
-          return this.ticket().requester().email();
+			return this.ticket().requester().email();
         case 'ticket.assignee.id':
-          var userId = this.ticket().assignee().user();
-          return (userId) ? userId.id() : '';
+			var userId = this.ticket().assignee().user();
+			return (userId) ? userId.id() : '';
         case 'ticket.assignee.name':
-          var userName = this.ticket().assignee().user();
-          return (userName) ? userName.name() : '';
+			var userName = this.ticket().assignee().user();
+			return (userName) ? userName.name() : '';
         case 'ticket.assignee.email':
-          var userEmail = this.ticket().assignee().user();
-          return (userEmail) ? userEmail.email() : '';
+			var userEmail = this.ticket().assignee().user();
+			return (userEmail) ? userEmail.email() : '';
         case 'ticket.tags':
-          var ticketTags = this.ticket().tags();
-          return ticketTags.join(', ');
+			var ticketTags = this.ticket().tags();
+			return ticketTags.join(', ');
         case 'current_user.id':
-          return this.currentUser().id();
-        case 'ticket.ticket_field_113246':
-          return this.ticket().custom_field_113246();
-        case 'ticket.ticket_field_113244':
-          return this.ticket().custom_field_113244();
-        case 'ticket.ticket_field_113245':
-          return this.ticket().custom_field_113245();
-        case 'ticket.ticket_field_113246':
-          return this.ticket().custom_field_113246();
+			return this.currentUser().id();
+		case 'ticket.ticket_field_112790':
+			//return this.ticket().customField("custom_field_112790");
+			returnvsl = this.ticket().customField("custom_field_112790");
+			break;
+		case 'ticket.ticket_field_113244':
+			//return this.ticket().customField("custom_field_113244");
+			returnvsl = this.ticket().customField("custom_field_113244");
+			break;
+		case 'ticket.ticket_field_113245':
+			//return this.ticket().customField("custom_field_113245");
+			returnvsl = this.ticket().customField("custom_field_113245");
+			break;
+		case 'ticket.ticket_field_113246':
+			//return this.ticket().customField("custom_field_113246");
+			returnvsl = this.ticket().customField("custom_field_113246");
+			break;
         case 'current_user.name':
-          return this.currentUser().name();
+			return this.currentUser().name();
         case 'current_user.email':
-          return this.currentUser().email();
+			return this.currentUser().email();
         default:
-          return placeholderStripped;
+			return placeholderStripped;
       }
+	if(!returnvsl)
+		returnvsl = "";
+	else
+	{
+		returnvsl = "http://jira/browse/" + returnvsl;
+	}
+	return returnvsl;
     }
 
   };
